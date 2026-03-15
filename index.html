@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엔딩</title>
+
+<style>
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: #ddd;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #F3EFE6;
+    overflow: auto;
+    padding-bottom: 50px;
+}
+
+/* 상단 바 */
+.top-bar {
+    position: absolute;
+    top: 87px;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.title-box {
+    position: relative;
+    width: 188px;
+    height: 33px;
+    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.25));
+}
+
+.rect { position: absolute; left: 16.5px; width: 60px; height: 33px; background: white; }
+.circle { position: absolute; width: 33px; height: 33px; background: white; border-radius: 50%; }
+.circle.left { left: 0; }
+.circle.right { right: 97px; }
+.title { position: absolute; left: 27px; top: 50%; transform: translateY(-50%); font-weight: 700; font-size: 20px; color: #6B4D20; white-space: nowrap; }
+.progress { font-weight: 700; font-size: 16px; color: #6B4D20; }
+
+/* 영상과 로고를 묶어주는 그룹 */
+.content-group {
+margin-top: 136px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+/* 영상 영역 */
+.video-area {
+    position: relative;
+    width: 90%;
+    aspect-ratio: 1/1;
+    background: black;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 버튼들 */
+.play-button {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    color: white; font-size: 40px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; user-select: none;
+}
+
+.fullscreen-button {
+    position: absolute;
+    bottom: 10px; right: 10px;
+    width: 36px; height: 36px;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 18px;
+}
+
+/* 🌟 로고 스타일 */
+.logo {
+    width: 220px;
+    max-width: 60%;
+    height: auto; /* 비율 유지 */
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+    <div class="top-bar">
+        <div class="title-box">
+            <div class="circle left"></div>
+            <div class="rect"></div>
+            <div class="circle right"></div>
+            <div class="title">엔딩</div>
+        </div>
+        <div class="progress">진행률 100%</div>
+    </div>
+
+    <div class="content-group">
+        <div class="video-area">
+            <video id="introVideo">
+                <source src="video3.mp4" type="video/mp4">
+            </video>
+            <div class="play-button" id="playButton">▶</div>
+            <div class="fullscreen-button" id="fullscreenButton">⛶</div>
+        </div>
+
+        <img src="logo.png" class="logo" alt="로고">
+    </div>
+</div>
+
+<script>
+const video = document.getElementById("introVideo");
+const playButton = document.getElementById("playButton");
+const fullscreenButton = document.getElementById("fullscreenButton");
+
+playButton.addEventListener("click", function(){
+    video.play();
+    playButton.style.display = "none";
+});
+
+fullscreenButton.addEventListener("click", function(){
+    if(video.requestFullscreen) video.requestFullscreen();
+    else if(video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+    else if(video.msRequestFullscreen) video.msRequestFullscreen();
+});
+</script>
+</body>
+</html>
