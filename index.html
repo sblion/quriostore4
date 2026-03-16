@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엔딩</title>
+
+<style>
+
+body{
+margin:0;
+display:flex;
+justify-content:center;
+background:#ddd;
+font-family:'Inter',sans-serif;
+min-height: 100vh;
+}
+
+.container{
+position:relative;
+width:100vw;
+min-height:100vh;
+background:#F3EFE6;
+padding-bottom: 50px;
+}
+
+
+/* 상단 */
+
+.title-pill{
+position:absolute;
+top:87px;
+left:6.5%;
+width:90px;
+height:33px;
+background:#fff;
+border-radius:20px;
+box-shadow:0 4px 4px rgba(0,0,0,0.25);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:700;
+color:#6B4D20;
+font-size:20px;
+}
+
+.progress{
+position:absolute;
+top:93px;
+right:6.5%;
+font-weight:700;
+color:#6B4D20;
+font-size:16px;
+}
+
+
+/* 영상 */
+
+.video-area{
+position:absolute;
+top:136px;
+left:6.5%;
+width:87%;
+aspect-ratio:1/1;
+background:black;
+overflow:hidden;
+border-radius:12px;
+}
+
+video{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+
+/* 재생버튼 */
+
+.play-button{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:80px;
+height:80px;
+border-radius:50%;
+background:rgba(0,0,0,0.6);
+color:white;
+font-size:40px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+user-select:none;
+}
+
+
+/* 전체화면 버튼 */
+
+.fullscreen-button{
+position:absolute;
+bottom:10px;
+right:10px;
+width:36px;
+height:36px;
+border-radius:6px;
+background:rgba(0,0,0,0.6);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+font-size:18px;
+}
+
+
+/* 로고 */
+
+.logo{
+position:absolute;
+top:78%;
+left:50%;
+transform:translate(-50%,-50%);
+width:220px;
+max-width:60%;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- 상단 -->
+<div class="title-pill">엔딩</div>
+<div class="progress">진행률 100%</div>
+
+
+    <!-- 영상 -->
+    <div class="video-area">
+
+        <video id="introVideo">
+            <source src="video3.mp4" type="video/mp4">
+        </video>
+
+        <div class="play-button" id="playButton">▶</div>
+
+        <div class="fullscreen-button" id="fullscreenButton">⛶</div>
+
+    </div>
+
+
+    <!-- 로고 -->
+    <img src="logo.png" class="logo">
+
+</div>
+
+
+<script>
+
+const video = document.getElementById("introVideo");
+const playButton = document.getElementById("playButton");
+const fullscreenButton = document.getElementById("fullscreenButton");
+
+
+/* 재생버튼 */
+
+playButton.addEventListener("click", function(){
+
+    video.play();
+    playButton.style.display = "none";
+
+});
+
+
+/* 전체화면 */
+
+fullscreenButton.addEventListener("click", function(){
+
+    if(video.requestFullscreen){
+        video.requestFullscreen();
+    } 
+    else if(video.webkitRequestFullscreen){
+        video.webkitRequestFullscreen();
+    } 
+    else if(video.msRequestFullscreen){
+        video.msRequestFullscreen();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
