@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>EPILOGUE</title>
+
+<style>
+/* 등장 애니메이션 */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.9s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    margin: 0; padding: 0;
+    background: #F3EFE6;
+    font-family: 'Inter', 'Apple SD Gothic Neo', sans-serif;
+    color: #6B4D20;
+    display: flex; flex-direction: column; align-items: center;
+    min-height: 100vh; overflow-x: hidden;
+}
+
+.container {
+    width: 100%; max-width: 380px;
+    padding: 80px 25px 120px;
+    box-sizing: border-box;
+    display: flex; flex-direction: column; align-items: center;
+}
+
+.header { text-align: center; margin-bottom: 70px; }
+.title-pill {
+    display: inline-block; padding: 5px 18px;
+    background: #fff; border-radius: 20px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.05);
+    font-weight: 700; font-size: 14px; margin-bottom: 8px;
+}
+
+.story-content {
+    width: 100%; text-align: center;
+    word-break: keep-all; line-height: 2.1; font-size: 15.5px;
+}
+
+.story-content p { margin-bottom: 90px; }
+.highlight { font-weight: 700; color: #8D6E43; }
+
+.next-case {
+    font-weight: 700; font-size: 17px;
+    color: #d35400; margin-top: 30px; margin-bottom: 20px !important;
+}
+
+/* ⭐ 축하 메시지 영역 */
+.congrats-box {
+    margin-top: 40px;
+    padding: 25px 10px;
+    border-top: 1px solid rgba(107, 77, 32, 0.1);
+    text-align: center;
+}
+
+.congrats-text {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6B4D20;
+}
+
+/* 하단 영역 */
+.footer {
+    margin-top: 50px;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 15px; width: 100%;
+}
+
+.hall-of-fame-btn {
+    width: 85%; padding: 14px;
+    background: #D4AF37; color: #fff;
+    text-decoration: none; border-radius: 10px;
+    font-weight: 700; font-size: 16px;
+    text-align: center; box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+.logo { width: 110px; margin-top: 30px; opacity: 0.4; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header reveal">
+        <div class="title-pill">EPILOGUE</div>
+        <div style="font-weight: 700; font-size: 20px;">사건 종료</div>
+    </div>
+
+    <div class="story-content">
+        <p class="reveal">요정마을점의 아침은<br>늘 조금 먼저 시작된다.</p>
+        <p class="reveal">문을 열기도 전에<br>카운터 위에는 이미<br>작은 별사탕 몇 개가 놓여 있다.</p>
+        <p class="reveal highlight">“이번엔 더 반짝이게 만들었어!”</p>
+        <p class="reveal">어디선가 들려오는 목소리.<br>익숙하다는 듯 웃으며 고개를 끄덕이며 말했다.</p>
+        <p class="reveal highlight">“응, 잘 팔릴 것 같아.”</p>
+        <p class="reveal">나는 별사탕을 진열대에 올려놓았다.</p>
+        <p class="reveal">잠시 후,<br>요정 하나가 나타나<br>마법을 충전해 간다.</p>
+        <p class="reveal highlight">“고마워! 오늘은 애들한테 먼저 줄게.”</p>
+        <p class="reveal">“천천히 사용해. 너무 많이 사용하면 또—”<br>“알아, 알아! 마법 아끼기!”<br>요정은 웃으며 사라진다.</p>
+        <p class="reveal">나는 그 모습을 잠시 바라보다가<br>카운터를 정리한다.</p>
+        <p class="reveal">그때,<br>다른 요정 하나가<br>조금 늦게, 조심스럽게 모습을 드러낸다.</p>
+        <p class="reveal highlight">“…저기.”<br>“응?”</p>
+        <p class="reveal">“요즘… 다른 쪽 마을이 좀 이상해.”<br>나는 손을 멈췄다.</p>
+        <p class="reveal">“이상하다는 게…?”<br>“마법이 아니라…<br>뭔가 다른 게 사라지고 있어.”</p>
+        <p class="reveal">하지만 요정은 더 말하지 않고<br>고개를 저은 뒤<br>조용히 돌아간다.</p>
+        <p class="reveal">나는 한동안<br>그 자리에 서 있었다.</p>
+        <p class="reveal">그리고 펜을 들어<br>조심스럽게 한 줄을 적는다.</p>
+        <p class="reveal next-case">&lt;다음 사건은...&gt;</p>
+
+        <div class="congrats-box reveal">
+            <br><br><br>
+            <p class="congrats-text">
+                수고하셨습니다!<br>
+                큐리오상점 스토리를 완료하셨어요.<br><br>
+                명예의 전당에 후기를 남겨주세요!
+            </p>
+        </div>
+    </div>
+
+    <div class="footer reveal">
+        <a href="https://padlet.com/projectchojune/curiostore" target="_blank" class="hall-of-fame-btn">🏆 명예의 전당 바로가기</a>
+        <img src="logo.png" class="logo" alt="logo">
+    </div>
+</div>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
